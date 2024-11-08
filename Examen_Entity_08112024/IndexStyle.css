@@ -1,0 +1,83 @@
+﻿.parent {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    gap: 8px;
+}
+
+.div1 {
+    grid-column: span 3 / span 3;
+    grid-row: span 3 / span 3;
+}
+
+.div2 {
+    grid-column: span 3 / span 3;
+    grid-row: span 3 / span 3;
+    grid-column-start: 4;
+}
+
+.div3 {
+    grid-column: span 3 / span 3;
+    grid-row: span 3 / span 3;
+    grid-row-start: 4;
+}
+
+.div4 {
+    grid-column: span 3 / span 3;
+    grid-row: span 3 / span 3;
+    grid-column-start: 4;
+    grid-row-start: 4;
+}
+
+.div5 {
+    grid-column: span 3 / span 3;
+    grid-row: span 3 / span 3;
+    grid-row-start: 7;
+}
+
+.div6 {
+    grid-column: span 3 / span 3;
+    grid-row: span 3 / span 3;
+    grid-column-start: 4;
+    grid-row-start: 7;
+}
+
+.div7 {
+    grid-column: span 3 / span 3;
+    grid-row: span 3 / span 3;
+    grid-row-start: 10;
+}
+
+.div8 {
+    grid-column: span 3 / span 3;
+    grid-row: span 3 / span 3;
+    grid-column-start: 4;
+    grid-row-start: 10;
+}
+
+/* Responsividad para pantallas medianas (tabletas, 768px o más) */
+@media (max-width: 768px) {
+    .parent {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(16, auto);
+    }
+
+    /* Cada div ocupa una fila completa */
+    .div1, .div2, .div3, .div4, .div5, .div6, .div7, .div8 {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+}
+
+/* Responsividad para pantallas pequeñas (móviles, 576px o menos) */
+@media (max-width: 576px) {
+    .parent {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(16, auto);
+    }
+
+    /* Cada div ocupa una fila completa y única */
+    .div1, .div2, .div3, .div4, .div5, .div6, .div7, .div8 {
+        grid-column: 1;
+        grid-row: auto;
+    }
